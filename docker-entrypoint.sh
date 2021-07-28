@@ -25,6 +25,16 @@ if [ -z "$KAFKA_BROKER" ]; then
   exit 1
 fi
 
+# kcctl is not fully stable yet so we need to carefully set few things
+touch ~/.kcctl
+chmod 777 ~/.kcctl
+mkdir -p /home/runner
+touch /home/runner/.kcctl
+chmod 777 ~/home/runner/.kcctl
+
+kcctl config set-context --cluster=$CONNECT_SERVER
+
+
 # Create a folder to store user's SSH keys if it does not exist.
 USER_SSH_KEYS_FOLDER=~/.ssh
 [ ! -d "$USER_SSH_KEYS_FOLDER" ] && mkdir -p $USER_SSH_KEYS_FOLDER
