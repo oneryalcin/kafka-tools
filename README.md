@@ -4,7 +4,7 @@
 > This is based on https://gitlab.com/ricardomendes/docker-ssh-aws-fargate. Credits to Ricardo for base image enabling ssh. More on [here](https://medium.com/ci-t/9-steps-to-ssh-into-an-aws-fargate-managed-container-46c1d5f834e2)
 
 
-A Docker image that allows connecting to an [__AWS Fargate__][1] managed
+A Docker image that allows connecting to an AWS Fargate managed
 container through SSH and use kafka management tools such as kafkacat, ksql cli, kcctl..etc. User authentication is done by a public and private key
 pair; containers receive the public key as an environment variable.
 
@@ -20,6 +20,7 @@ You need to define the following env variables
 
 `SCHEMA_REGISTRY`: Confluent Schema Registry address (Eg. http://<schema-registry-address:8081)
 
+> Note: The confluent tools such as ksql CLI are from confluent platform version 6.2
 
 ## Usage 
 First build the image or pull from dockerhub
