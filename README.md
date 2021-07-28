@@ -38,10 +38,10 @@ Run the docker and set environment variables
 ```
 docker run --env "SSH_PUBLIC_KEY=<YOUR_PUBLIC_KEY>" \
            --env KSQL_SERVER="http://<KSQL_SERVER_ADDRESS>:8088" \
-           --env CONNECT_SERVER="http://localhost:8083" \
-           --env SCHEMA_REGISTRY="foo" \
-           --env KAFKA_BROKER=bar \
-           kafka-cli-tools:0.0.1
+           --env CONNECT_SERVER="http://<KAFKA_CONNECT_ADDRESS>:8083" \
+           --env SCHEMA_REGISTRY="http://<SCHEMA_REGISTY_ADDRESS>:8081" 
+           --env KAFKA_BROKER="<KAFKA_BROKER_1_ADDRESS:9092,KAFKA_BROKER_2_ADDRESS:9092>" \
+           kafka-cli-tools:latest
 ```
 
 You should be able to ssh into the image (not using exec command) 
