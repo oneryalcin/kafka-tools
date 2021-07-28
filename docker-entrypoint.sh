@@ -30,10 +30,10 @@ touch ~/.kcctl
 chmod 777 ~/.kcctl
 mkdir -p /home/runner
 touch /home/runner/.kcctl
-chmod 777 ~/home/runner/.kcctl
+chmod 777 /home/runner/.kcctl
 
-kcctl config set-context --cluster=$CONNECT_SERVER
-
+/kcctl-1.0.0-SNAPSHOT-linux-x86_64/bin/kcctl config set-context --cluster=$CONNECT_SERVER
+. /kcctl-1.0.0-SNAPSHOT-linux-x86_64/kcctl_completion
 
 # Create a folder to store user's SSH keys if it does not exist.
 USER_SSH_KEYS_FOLDER=~/.ssh
