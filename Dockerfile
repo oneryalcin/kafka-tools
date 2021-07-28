@@ -13,7 +13,7 @@ EXPOSE 22
 # --------------------------------------------------------------------------
 # Install Java 8 and other tools
 # --------------------------------------------------------------------------
-RUN apt-get -y install openjdk-8-jre-headless curl unzip kafkacat
+RUN apt-get -y install openjdk-8-jre-headless curl unzip jq kafkacat
 
 # --------------------------------------------------------------------------
 # Add Confluent CLI Components
